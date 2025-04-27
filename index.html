@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Visualization</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Wall Visualization</h1>
+    
+    <div class="instruction">
+        <p><strong>Instructions:</strong></p>
+        <p>1. Enter the number of walls you want to visualize</p>
+        <p>2. Enter the heights of the walls separated by # symbol (e.g., 4#1#2#6#8)</p>
+        <p>3. Set the observer heights for left and right perspectives</p>
+        <p>4. Click "Visualize" to see your walls and visibility calculations</p>
+    </div>
+    
+    <div class="input-container">
+        <div class="input-group">
+            <label for="num-walls">Number of Walls:</label>
+            <input type="number" id="num-walls" min="1" max="20" placeholder="Enter a positive integer">
+        </div>
+        
+        <div class="input-group">
+            <label for="wall-heights">Height of Walls:</label>
+            <input type="text" id="wall-heights" placeholder="e.g., 4#1#2#6#8">
+        </div>
+        
+        <div class="input-group">
+            <label for="left-observer-height">Left Observer Height:</label>
+            <input type="number" id="left-observer-height" min="0" value="0" placeholder="Height from ground">
+        </div>
+        
+        <div class="input-group">
+            <label for="right-observer-height">Right Observer Height:</label>
+            <input type="number" id="right-observer-height" min="0" value="0" placeholder="Height from ground">
+        </div>
+        
+        <button id="visualize-btn">Visualize</button>
+    </div>
+    
+    <div id="error"></div>
+    
+    <div class="walls-container" id="walls-container">
+        <div class="person" id="person-left">
+            <div class="stick"></div>
+        </div>
+        <div class="person" id="person-right">
+            <div class="stick"></div>
+        </div>
+    </div>
+    
+    <div class="results">
+        <div id="visible-left">Walls Visible from Left: </div>
+        <div id="visible-right">Walls Visible from Right: </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
